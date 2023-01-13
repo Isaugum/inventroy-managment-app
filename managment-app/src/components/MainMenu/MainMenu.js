@@ -1,8 +1,7 @@
 import React from "react";
-import { MainMenuButton } from "./MainMenuButton";
+import { MainMenuButton } from "../MainMenuButton";
 import { getUrnik, getInventura, getSprejem, getOdpis, getPipe } from './buttonFunctions';
 const MainMenu = (props) => {
-
 
     return(
         <React.Fragment>

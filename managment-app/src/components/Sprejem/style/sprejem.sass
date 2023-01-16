@@ -1,0 +1,65 @@
+
+$form-items-top-margin: 30px
+
+@mixin flex($direction, $justify, $align)
+    display: flex
+    flex-direction: $direction
+    justify-content: $justify
+    align-items: $align
+
+.sprejem-form
+    display: grid
+    grid-template-columns: repeat(5, 1fr)
+
+    align-items: center
+    justify-content: center
+
+    min-width: 320px
+    padding: 50px
+
+    .label-form
+
+        grid-column-start: 1
+        grid-column-end: 3
+
+        margin-top: $form-items-top-margin
+
+    .input-form
+        height: 25px
+        color: black
+        background-color: white
+
+        grid-column-start: 3
+        grid-column-end: 6
+
+        margin-top: $form-items-top-margin
+
+        &:nth-child(6)
+
+            width: 100%
+
+            grid-column-start: 3
+            grid-column-end: 5
+
+    .units-container
+        height: 25px
+        min-width: 60px
+
+        margin-left: 10px
+        margin-top: $form-items-top-margin
+
+        grid-column-start: 5
+        grid-column-end: 6
+
+        .units-form
+            height: 100%
+            width: 100%
+
+    .submit-btn
+        height: 25px
+        margin-top: 50px
+
+        border: solid white 1px
+
+        grid-column-start: 2
+        grid-column-end: 5

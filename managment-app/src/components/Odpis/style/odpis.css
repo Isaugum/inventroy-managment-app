@@ -1,11 +1,11 @@
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   padding: 10% 10vh;
 }
 .container .main-title {
   font-size: 1.5em;
   padding: 20px 0;
-}/*# sourceMappingURL=sprejem.css.map */
+}/*# sourceMappingURL=odpis.css.map */

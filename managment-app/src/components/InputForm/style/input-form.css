@@ -1,0 +1,70 @@
+.odpis-form {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+  justify-content: center;
+  min-width: 320px;
+  max-width: 600px;
+  padding: 0 50px;
+}
+.odpis-form .label-form {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  margin-top: 30px;
+}
+.odpis-form .input-form {
+  height: 25px;
+  color: black;
+  background-color: white;
+  grid-column-start: 3;
+  grid-column-end: 6;
+  margin-top: 30px;
+}
+.odpis-form .input-form:nth-child(6) {
+  width: 100%;
+  grid-column-start: 3;
+  grid-column-end: 5;
+}
+.odpis-form .input-form-error {
+  height: 25px;
+  color: red;
+  background-color: white;
+  border: 2px solid red;
+  grid-column-start: 3;
+  grid-column-end: 6;
+  margin-top: 30px;
+}
+.odpis-form .input-form-error:nth-child(6) {
+  width: 100%;
+  grid-column-start: 3;
+  grid-column-end: 5;
+}
+.odpis-form .units-container {
+  height: 25px;
+  min-width: 60px;
+  margin-left: 10px;
+  margin-top: 30px;
+  grid-column-start: 5;
+  grid-column-end: 6;
+}
+.odpis-form .units-container .units-form {
+  height: 100%;
+  width: 100%;
+}
+.odpis-form .submit-btn {
+  height: 25px;
+  margin-top: 50px;
+  border: solid white 1px;
+  grid-column-start: 4;
+  grid-column-end: 6;
+}
+
+.error-message {
+  color: white;
+  text-align: center;
+  border: solid white 1px;
+  width: 320px;
+  padding: 20px 50px;
+  margin-top: 50px;
+  font-size: 0.8em;
+}/*# sourceMappingURL=input-form.css.map */

@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { MainMenu, Sprejem } from './components';
+import React, { useState, useEffect, createContext } from "react";
+import { MainMenu, Sprejem, Odpis, Inventura } from './components';
+
+export const ScreenContext = createContext(null);
 
 function App() {
   const [ screenState, updateScreenState ] = useState("mainMenu");
@@ -8,14 +10,17 @@ function App() {
     e.preventDefault();
 
     let btnValue = e.target.dataset.btnvalue;
+    console.log(btnValue);
     updateScreenState(btnValue);
   }
 
   return (
-      <div className={"main-screen"}>
+      <ScreenContext.Provider value={{ handleMenuClick }} className={"main-screen"}>
         {screenState === "mainMenu" && <MainMenu handleMenuClick={handleMenuClick} />}
         {screenState === "sprejem" && <Sprejem handleMainMenu={handleMenuClick}/>}
-      </div>
+        {screenState === "odpis" && <Odpis handleMainMenu={handleMenuClick}/>}
+        {screenState === "inventura" && <Inventura handleMainMenu={handleMenuClick}/>}
+      </ScreenContext.Provider>
   );
 }
 

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, createContext } from "react";
-import { MainMenu, Sprejem, Odpis, Inventura } from './components';
+import { MainMenu, Sprejem, Odpis, Inventura, FourOFour } from './pages';
+import { Routes, Route } from "react-router-dom";
 
 export const ScreenContext = createContext(null);
 
@@ -15,12 +16,19 @@ function App() {
   }
 
   return (
-      <ScreenContext.Provider value={{ handleMenuClick }} className={"main-screen"}>
+      <Routes>
+        <Route path="/" element={< MainMenu />} />
+        <Route path="/sprejem" element={< Sprejem />}/>
+        <Route path="/odpis" element={< Odpis />}/>
+        <Route path="/inventura" element={< Inventura />}/>
+        <Route path="*" element={< FourOFour />} />
+      </Routes>
+      /*<ScreenContext.Provider value={{ handleMenuClick }} className={"main-screen"}>
         {screenState === "mainMenu" && <MainMenu handleMenuClick={handleMenuClick} />}
         {screenState === "sprejem" && <Sprejem handleMainMenu={handleMenuClick}/>}
         {screenState === "odpis" && <Odpis handleMainMenu={handleMenuClick}/>}
         {screenState === "inventura" && <Inventura handleMainMenu={handleMenuClick}/>}
-      </ScreenContext.Provider>
+      </ScreenContext.Provider>*/
   );
 }
 

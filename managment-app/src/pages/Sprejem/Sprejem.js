@@ -1,7 +1,6 @@
 
 import React, { useState } from "react";
-import { InputForm } from '../InputForm';
-import { Navbar } from '../Navbar';
+import { InputForm, Navbar } from '../../components';
 import './style/sprejem.css';
 
 const Sprejem = (props) => {

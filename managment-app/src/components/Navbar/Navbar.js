@@ -1,19 +1,16 @@
 import React, { useState, useContext } from "react";
-import { ScreenContext } from "../../App";
+import { Link } from "react-router-dom";
 import './style/navbar.css';
 
 const Navbar = (props) => {
 
-    const { handleMenuClick } = useContext(ScreenContext);
-
     return(
         <ul className="navbar">
-            <button className="navbar-btn" onClick={handleMenuClick} data-btnvalue="mainMenu">Menu</button>
-            <button className="navbar-btn" onClick={handleMenuClick} data-btnvalue="sprejem">Sprejem</button>
-            <button className="navbar-btn" onClick={handleMenuClick} data-btnvalue="odpis">Odpis</button>
-            <button className="navbar-btn" onClick={handleMenuClick} data-btnvalue="pipe">Pipe</button>
-            <button className="navbar-btn" onClick={handleMenuClick} data-btnvalue="inventura">Inventura</button>
-            <button className="navbar-btn" onClick={handleMenuClick} data-btnvalue="urnik">Urnik</button> 
+            <Link className="main-menu-button" to="/">Main Menu</Link>
+            <Link className="main-menu-button" to="/sprejem">Sprejem</Link>
+            <Link className="main-menu-button" to="/odpis">Odpis</Link>
+            <Link className="main-menu-button" to="/pipe">Pipe</Link>
+            <Link className="main-menu-button" to="/inventura">Inventura</Link>
         </ul>
     )
 }

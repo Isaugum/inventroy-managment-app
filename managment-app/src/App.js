@@ -1,8 +1,6 @@
 import React, { useState, useEffect, createContext } from "react";
-import { MainMenu, Sprejem, Odpis, Inventura, FourOFour } from './pages';
+import { MainMenu, Sprejem, Odpis, Inventura, FourOFour, NewItem, NewSupplier } from './pages';
 import { Routes, Route } from "react-router-dom";
-
-export const ScreenContext = createContext(null);
 
 function App() {
   const [ screenState, updateScreenState ] = useState("mainMenu");
@@ -21,7 +19,10 @@ function App() {
         <Route path="/sprejem" element={< Sprejem />}/>
         <Route path="/odpis" element={< Odpis />}/>
         <Route path="/inventura" element={< Inventura />}/>
+        <Route path="/NewItem" element={< NewItem />}/>
+        <Route path="/newSupplier" element={< NewSupplier />}/>
         <Route path="*" element={< FourOFour />} />
+        
       </Routes>
       /*<ScreenContext.Provider value={{ handleMenuClick }} className={"main-screen"}>
         {screenState === "mainMenu" && <MainMenu handleMenuClick={handleMenuClick} />}

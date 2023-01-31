@@ -11,6 +11,8 @@ const Navbar = (props) => {
             <Link className="main-menu-button" to="/odpis">Odpis</Link>
             <Link className="main-menu-button" to="/pipe">Pipe</Link>
             <Link className="main-menu-button" to="/inventura">Inventura</Link>
+            <Link className="main-menu-button" to="/newItem">New Item</Link>
+            <Link className="main-menu-button" to="/newSupplier">New Supplier</Link>
         </ul>
     )
 }

@@ -7,12 +7,30 @@ const InputForm = (props) => {
     let isInputValid = true;
     const [ errorMsg, setErrorMsg ] = useState(false);
     const [ inputData, setInputData ] = useState({
-        supplier: "",
-        product: "",
+        supplier: "bevog",
+        product: "baja",
         quantity: "",
         units: "liters",
         date: Date()
     })
+
+    const suppliers = {
+        "bevog": {
+            id: "bvg",
+            products: [
+                "Baja", "Kramah", "Tak", "Helles", "Buzz"
+            ]      
+        },
+        "barut": {
+            id: "brt",
+            products: [
+                "Summer Snow", "Kletak", "Roadside Picnic"
+            ]      
+        },
+    }
+
+    let selectedSupplier = suppliers[inputData.supplier];
+    let supplierProducts = selectedSupplier.products;
 
     const handleInvalidInput = (data) => {
         Object.keys(data).forEach(key => {
@@ -60,11 +78,15 @@ const InputForm = (props) => {
         <React.Fragment>
             <form className="odpis-form" onSubmit={handleSubmit}>
                 <label className="label-form" >Supplier: </label>
-                <input className={!errorMsg ? "input-form" : "input-form-error"} placeholder="Supplier" type="text" data-key="supplier" onChange={e => handleChange(e)}/>
+                <select className={!errorMsg ? "input-form" : "input-form-error"} id="units" data-key="supplier" onChange={e => handleChange(e)}>
+                    {Object.keys(suppliers).map(sup => <option value={sup} key={sup.id}>{sup[0].toUpperCase() + sup.slice(1)}</option>)}
+                </select>
                 <label className="label-form">Product: </label>
-                <input className={!errorMsg ? "input-form" : "input-form-error"} placeholder="Product" type="text" data-key="product" onChange={e => handleChange(e)}/>
+                <select className={!errorMsg ? "input-form" : "input-form-error"} id="product" data-key="product" onChange={e => handleChange(e)}>
+                    {supplierProducts.map(product => <option value={product} key={product}>{product}</option>)}
+                </select>
                 <label className="label-form">Quantity: </label>
-                <input className={!errorMsg ? "input-form" : "input-form-error"} placeholder="Quantity" type="text" data-key="quantity" onChange={e => handleChange(e)}/>
+                <input className={!errorMsg ? "input-form" : "input-form-error"} placeholder="Quantity" id="quantity" data-key="quantity" onChange={e => handleChange(e)} />
                 <div className="units-container">
                     <select className="units-form" id="units" data-key="units" onChange={e => handleChange(e)}>
                         <option value="Liter">LIT</option>

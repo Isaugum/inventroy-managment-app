@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 import { InputForm, Navbar } from '../../components';
-import './style/odpis.css';
+import style from './style/odpis.css';
 
 const Odpis = (props) => {
 
@@ -9,7 +9,7 @@ const Odpis = (props) => {
         <>
         < Navbar />
         <div className="container">
-            <h1 className="main-title">ODPIS</h1>            
+            <h1 className="mainTitle">ODPIS</h1>            
             < InputForm origin="odpis"/>
         </div> 
         </>

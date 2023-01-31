@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 import { InputForm, Navbar } from '../../components';
-import './style/sprejem.css';
+import style from './style/sprejem.css';
 
 const Sprejem = (props) => {
 
@@ -9,7 +9,7 @@ const Sprejem = (props) => {
         <>  
         < Navbar />
         <div className="container">
-            <h1 className="main-title">SPREJEM</h1>            
+            <h1 className="mainTitle">SPREJEM</h1>            
             < InputForm origin="sprejem"/>
         </div> 
         </>

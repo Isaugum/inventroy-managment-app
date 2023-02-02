@@ -1,8 +1,11 @@
-
-import React, { useState } from "react";
+import {DataContext} from '../../App';
+import React, { useState, useContext } from "react";
 import './style/input-form.css';
 
 const InputForm = (props) => {
+
+    const suppliersFunctions = useContext(DataContext);
+    const suppliers = suppliersFunctions.suppliers;
 
     let isInputValid = true;
     const [ errorMsg, setErrorMsg ] = useState(false);
@@ -13,21 +16,6 @@ const InputForm = (props) => {
         units: "liters",
         date: Date()
     })
-
-    const suppliers = {
-        "bevog": {
-            id: "bvg",
-            products: [
-                "Baja", "Kramah", "Tak", "Helles", "Buzz"
-            ]      
-        },
-        "barut": {
-            id: "brt",
-            products: [
-                "Summer Snow", "Kletak", "Roadside Picnic"
-            ]      
-        },
-    }
 
     let selectedSupplier = suppliers[inputData.supplier];
     let supplierProducts = selectedSupplier.products;

@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import { Navbar } from '../../components';
+import { Navbar, InputForm } from '../../components';
 import './style/inventura.css';
 
 const Inventura = (props) => {
@@ -10,7 +10,7 @@ const Inventura = (props) => {
         < Navbar />
         <div className="container">
             <h1 className="main-title">INVENTURA</h1>            
-            {/* Custom input! - Create inventura (seperate file) -> select*/}
+            < InputForm origin="inventura"/>
         </div> 
         </>
     )

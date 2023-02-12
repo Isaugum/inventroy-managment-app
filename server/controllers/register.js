@@ -11,7 +11,7 @@ const jsonParser = bodyParser.json();
 
 router.post("/", jsonParser, (req, res) => {
     if(req.body === undefined || req.body.password === undefined || req.body.username === undefined) {
-        throw "INVALID REQUEST";
+        console.log("INVALID REQUEST");
     }
 
     let username = req.body.username;
@@ -26,7 +26,7 @@ router.post("/", jsonParser, (req, res) => {
         if(result.rows.length > 0) {
             console.log("Username already exists!")
         } else {
-            bcrypt.harsh(password, saltRounds, (err, hash) => {
+            bcrypt.hash(password, saltRounds, (err, hash) => {
                 if(err) {
                     console.log(err);
                 }
@@ -38,3 +38,5 @@ router.post("/", jsonParser, (req, res) => {
         }
     })
 });
+
+module.exports = router;

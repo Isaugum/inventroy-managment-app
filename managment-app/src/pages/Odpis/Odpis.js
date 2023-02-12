@@ -10,7 +10,6 @@ const Odpis = (props) => {
         < Navbar />
         <div className={style.container}>
             <h1 className={style.mainTitle}>ODPIS</h1>            
-            < InputForm origin="odpis"/>
         </div> 
         </>
     )

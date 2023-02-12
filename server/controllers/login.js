@@ -12,7 +12,8 @@ const jsonParser = bodyParser.json();
 router.post("/", jsonParser, (req, res) => {
 
     if(req.body === undefined || req.body.password === undefined || req.body.username === undefined) {
-        throw "INVALID REQUEST";
+        console.log("INVALID REQUEST");
+        return null;
     }
 
     let username = req.body.username;

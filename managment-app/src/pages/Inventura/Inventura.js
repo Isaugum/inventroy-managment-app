@@ -1,15 +1,15 @@
 
 import React, { useState } from "react";
 import { Navbar, InputForm } from '../../components';
-import './style/inventura.css';
+import style from './style/inventura.css';
 
 const Inventura = (props) => {
 
     return(
         <>
         < Navbar />
-        <div className="container">
-            <h1 className="main-title">INVENTURA</h1>            
+        <div className={style.container}>
+            <h1 className={style.mainTitle}>INVENTURA</h1>            
             < InputForm origin="inventura"/>
         </div> 
         </>

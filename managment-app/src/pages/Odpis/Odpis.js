@@ -8,8 +8,8 @@ const Odpis = (props) => {
     return(
         <>
         < Navbar />
-        <div className="container">
-            <h1 className="mainTitle">ODPIS</h1>            
+        <div className={style.container}>
+            <h1 className={style.mainTitle}>ODPIS</h1>            
             < InputForm origin="odpis"/>
         </div> 
         </>

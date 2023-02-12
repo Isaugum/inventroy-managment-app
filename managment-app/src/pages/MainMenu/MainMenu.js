@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import './styles/main-menu.css'
+import style from './styles/mainMenu.css'
 
 const MainMenu = (props) => {
 
@@ -8,7 +8,7 @@ const MainMenu = (props) => {
 
     return(
         <React.Fragment>
-            <div className="button-container">
+            <div className={style.buttonContainer}>
                 <Link className="main-menu-button" to="/sprejem">Sprejem</Link>
                 <Link className="main-menu-button" to="/odpis">Odpis</Link>
                 <Link className="main-menu-button" to="/pipe">Pipe</Link>

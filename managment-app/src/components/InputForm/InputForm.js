@@ -1,6 +1,6 @@
 import {DataContext} from '../../App';
 import React, { useState, useContext } from "react";
-import './style/input-form.css';
+import style from './style/input-form.css';
 
 const InputForm = (props) => {
 

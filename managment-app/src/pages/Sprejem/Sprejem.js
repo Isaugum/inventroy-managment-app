@@ -8,8 +8,8 @@ const Sprejem = (props) => {
     return(
         <>  
         < Navbar />
-        <div className="container">
-            <h1 className="mainTitle">SPREJEM</h1>            
+        <div className={style.container}>
+            <h1 className={style.mainTitle}>SPREJEM</h1>            
             < InputForm origin="sprejem"/>
         </div> 
         </>

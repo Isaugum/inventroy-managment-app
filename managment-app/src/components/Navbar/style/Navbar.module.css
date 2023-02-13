@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul, li {
+  list-style: none;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.openBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 40px;
+  color: rgb(230, 230, 230);
+  background-color: rgba(141, 25, 122, 0.6);
+  padding: 10px 20px;
+}
+
+.navbarContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100vh;
+  background-color: rgb(8, 201, 250);
+  padding-left: 15px;
+  padding-top: 60px;
+  transition: 500ms;
+}
+.navbarContainer .navbarBtn {
+  height: 40px;
+  width: 80%;
+  color: rgb(230, 230, 230);
+  background-color: rgba(141, 25, 122, 0.6);
+  margin: 5px 0;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+.navbarContainer .logoutBtn {
+  margin-top: 20px;
+  width: 40%;
+  height: 40px;
+}/*# sourceMappingURL=Navbar.module.css.map */

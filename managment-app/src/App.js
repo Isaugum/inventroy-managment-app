@@ -1,8 +1,7 @@
 import axios from 'axios';
-
 import React, { useState, useEffect, createContext } from "react";
 import { MainMenu, Sprejem, Odpis, Inventura, FourOFour, NewItem, NewSupplier, LoginScreen } from './pages';
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 
 export const DataContext = createContext(null);
 export const UserSession = createContext(null);
@@ -11,6 +10,8 @@ function App() {
 
   const [ userSession, setUserSession ] = useState(false);
   const [ user, setUser ] = useState("");
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const token = localStorage.getItem('token');

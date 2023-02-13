@@ -3,6 +3,8 @@ import React, { useContext, useState } from 'react'
 import { PopUp } from '../../components';
 import {UserSession} from '../../App.js';
 
+import style from './style/LoginScreen.module.css';
+
 const LoginScreen = () => {
 
     const [ username, setUsername ] = useState("");
@@ -56,16 +58,21 @@ const LoginScreen = () => {
                 username: username,
                 password: password
             }
-        })
+        }).then(response => {
+            if(response.data.error) {
+                console.log(response.data.error);
+                setError(response.data.error);
+            };
+        });
     }
 
     return (
-        <div>
-            <form>
-                <input type="text" placeholder="Username" onChange={e => {e.preventDefault(); setUsername(e.target.value)}}/>
-                <input type="password" placeholder="Password" onChange={e => {e.preventDefault(); setPassword(e.target.value)}}/>
-                <button onClick={(e) => handleLogin(e)}>Login</button>
-                <button onClick={(e) => handleRegister(e)}>Register</button>
+        <div className={style.container}>
+            <form className={style.loginForm}>
+                <input className={style.usernameInput} type="text" placeholder="Username" onChange={e => {e.preventDefault(); setUsername(e.target.value)}}/>
+                <input className={style.passwordInput} type="password" placeholder="Password" onChange={e => {e.preventDefault(); setPassword(e.target.value)}}/>
+                <button className={style.loginButton} onClick={(e) => handleLogin(e)}>Login</button>
+                <button className={style.registerButton} onClick={(e) => handleRegister(e)}>Register</button>
             </form>
             { error !== "" ? < PopUp setError={setError} message={error} /> : null}
         </div>

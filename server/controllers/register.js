@@ -10,8 +10,8 @@ const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 
 router.post("/", jsonParser, (req, res) => {
-    if(req.body === undefined || req.body.password === undefined || req.body.username === undefined) {
-        console.log("INVALID REQUEST");
+    if(req.body === undefined || req.body.password === undefined || req.body.username === undefined || req.body.password === "" || req.body.username === "") {
+        res.send({error: "Please provide username and password!"});
     }
 
     let username = req.body.username;
@@ -25,6 +25,7 @@ router.post("/", jsonParser, (req, res) => {
 
         if(result.rows.length > 0) {
             console.log("Username already exists!")
+            res.send({error: "Username already exists!"})
         } else {
             bcrypt.hash(password, saltRounds, (err, hash) => {
                 if(err) {

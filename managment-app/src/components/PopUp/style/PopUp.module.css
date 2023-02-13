@@ -1,3 +1,18 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul, li {
+  list-style: none;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -9,16 +24,16 @@
   top: 0;
   left: 0;
   z-index: 20;
-  background-color: rgba(200, 200, 200, 0.2);
+  background-color: rgba(200, 200, 200, 0.5);
 }
 .container .messageBox {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 30%;
-  width: 30%;
-  background-color: rgb(8, 201, 250);
+  height: 200px;
+  width: 300px;
+  background-color: red;
 }
 .container .messageBox .message {
   margin-top: 20px;

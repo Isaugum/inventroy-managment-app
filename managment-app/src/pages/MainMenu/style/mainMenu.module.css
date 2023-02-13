@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul, li {
+  list-style: none;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(200, 200, 200, 0.5);
+}
+.container .importantMsg {
+  height: 200px;
+  width: 80%;
+  border: solid black;
+}/*# sourceMappingURL=mainMenu.module.css.map */

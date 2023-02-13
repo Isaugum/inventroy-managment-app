@@ -11,15 +11,15 @@
     left: 0;
     z-index: 20;
 
-    background-color: rgba(200, 200, 200, 0.2);
+    background-color: rgba(200, 200, 200, 0.5);
 
     .messageBox {
         @include main.flexBox(column, center, center);
 
-        height: 30%;
-        width: 30%;
+        height: 200px;
+        width: 300px;
 
-        background-color: rgb(8, 201, 250);
+        background-color: red;
 
         .header {
         }

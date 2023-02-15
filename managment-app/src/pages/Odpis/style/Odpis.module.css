@@ -1,0 +1,59 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul, li {
+  list-style: none;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(200, 200, 200, 0.5);
+}
+.container .mainTitle {
+  margin-top: 100px;
+  margin-bottom: 60px;
+}
+.container .formBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(8, 201, 250);
+  margin: 10px 0;
+  padding: 40px 70px;
+  border-radius: 10px;
+}
+.container .formBox .formTitle {
+  margin-bottom: 10px;
+}
+.container .formBox .supplierForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container .formBox .supplierForm .formLabel {
+  font-size: 22px;
+}
+.container .formBox .supplierForm .formInput {
+  width: 150px;
+  height: 30px;
+  margin: 10px 0;
+}
+.container .formBox .supplierForm .formSubmitBtn {
+  width: 100px;
+  height: 28px;
+}/*# sourceMappingURL=Odpis.module.css.map */

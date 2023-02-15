@@ -35,6 +35,28 @@ const initDatabase = () => {
         "item_name" VARCHAR(255) NOT NULL,
         PRIMARY KEY ("item_id")
     );`)
+
+    database.query(`
+    CREATE TABLE IF NOT EXISTS "recieved_items" (
+        "item_id" SERIAL,
+        "supplier_id" INTEGER NOT NULL REFERENCES suppliers(company_id),
+        "item_name" VARCHAR(255) NOT NULL,
+        "quantity" DECIMAL(10) NOT NULL,
+        "units" VARCHAR(10) NOT NULL,
+        "date" VARCHAR(20) NOT NULL,
+        PRIMARY KEY ("item_id")
+    );`)
+
+    database.query(`
+    CREATE TABLE IF NOT EXISTS "write_off" (
+        "item_id" SERIAL,
+        "supplier_id" INTEGER NOT NULL REFERENCES suppliers(company_id),
+        "item_name" VARCHAR(255) NOT NULL,
+        "quantity" DECIMAL(10) NOT NULL,
+        "units" VARCHAR(10) NOT NULL,
+        "date" VARCHAR(20) NOT NULL,
+        PRIMARY KEY ("item_id")
+    );`)
 }
 
 module.exports = { initDatabase, database };

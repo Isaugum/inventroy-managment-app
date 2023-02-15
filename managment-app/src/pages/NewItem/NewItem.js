@@ -138,7 +138,7 @@ const NewItem = (props) => {
                         }) : null
                         }
                     </select>
-                    <input className={style.formInput}type="text" placeholder="item name" onChange={e => {e.preventDefault(); setNewItemInput(e.target.value);}}/>
+                    <input className={style.formInput} type="text" placeholder="item name" onChange={e => {e.preventDefault(); setNewItemInput(e.target.value);}}/>
                     <button className={style.formSubmitBtn} onClick={(e) => {addNewItem(e); e.target.value = "";}}>Add</button>
                 </form>                
             </div>

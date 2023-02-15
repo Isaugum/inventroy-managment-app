@@ -1,12 +1,9 @@
 const express = require('express');
 let router = express.Router();
 const { database } = require('../../database');
-const bcrypt = require('bcrypt');
-const saltRounds = 10;
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 
-const jwt = require('jsonwebtoken');
 
 
 router.post("/", jsonParser, (req, res) => {

@@ -89,7 +89,7 @@ const NewSupplier = (props) => {
         <>
         < Navbar />
         <div className={style.container}>
-            <h1 className={style.mainTitle}>Add / Remove</h1>
+            <h1 className={style.mainTitle}>Suppliers</h1>
             <div className={style.formBox}>
                 <h2 className={style.formTitle}>Add new supplier</h2>
                 <form className={style.supplierForm}>

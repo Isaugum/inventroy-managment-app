@@ -15,6 +15,10 @@ const getSuppliersRouter = require('./controllers/suppliers/getSuppliers.js');
 const addItemsRouter = require('./controllers/items/addItems.js');
 const removeItemsRouter = require('./controllers/items/removeItems.js');
 const getItemsRouter = require('./controllers/items/getItems.js');
+//STORAGE ( WRITE OFF, RECEIVE )
+const newWriteOffRouter = require('./controllers/storage/newWriteOff.js');
+const getWriteOffRouter = require('./controllers/storage/getWriteOff.js');
+const removeWriteOffRouter = require('./controllers/storage/removeWriteOff.js');
 
 const app = express();
 const port = process.env.PORT;
@@ -36,6 +40,10 @@ app.use("/get-suppliers", getSuppliersRouter);
 app.use("/new-items", addItemsRouter);
 app.use("/remove-items", removeItemsRouter);
 app.use("/get-items", getItemsRouter);
+
+app.use("/new-write-off", newWriteOffRouter);
+app.use("/get-write-off", getWriteOffRouter);
+app.use("/remove-write-off", removeWriteOffRouter);
 
 
 app.listen(port, () => {

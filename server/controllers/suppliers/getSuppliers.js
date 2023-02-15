@@ -1,8 +1,6 @@
 const express = require('express');
 let router = express.Router();
-const { database } = require('../database');
-const bcrypt = require('bcrypt');
-const saltRounds = 10;
+const { database } = require('../../database');
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 

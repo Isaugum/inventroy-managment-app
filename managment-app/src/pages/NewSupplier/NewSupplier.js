@@ -8,6 +8,7 @@ const NewSupplier = (props) => {
     const [ suppliers, setSuppliers  ] = useState([]);
     const [ newSupplierInput, setNewSupplierInput ] = useState("");
     const [ removeSupplierChoice, setRemoveSupplier ] = useState("");
+    const [ didUpdate, setDidUpdate ] = useState(false);
 
     const addNewSupplier = async (e) => {
         e.preventDefault();
@@ -20,6 +21,15 @@ const NewSupplier = (props) => {
             },
             data: {
                 supplier: newSupplierInput.toLowerCase()
+            }
+        }).then(response => {
+            console.log(response);
+
+            if(response.data.error) {
+                console.log(response.data.error);
+            } else {
+                console.log(response.data);
+                setDidUpdate(!didUpdate);
             }
         }).catch(err => {
             console.log(err);
@@ -38,6 +48,15 @@ const NewSupplier = (props) => {
             data: {
                 supplier: removeSupplierChoice
             }
+        }).then(response => {
+            console.log(response);
+
+            if(response.data.error) {
+                console.log(response.data.error);
+            } else {
+                console.log(response.data);
+                setDidUpdate(!didUpdate);
+            }
         }).catch(err => {
             console.log(err);
         })
@@ -52,16 +71,19 @@ const NewSupplier = (props) => {
                 "Content-Type": "application/json",
             },
         }).then(response => {
-            setSuppliers(response.data);
+            if(response.data.error) {
+                console.log(response.data);                
+            } else {
+                setSuppliers(response.data);                
+            }
         })
     }
 
     useEffect(() => {
-        let counter = 0;
-        if(counter === 0) {
-            getSuppliers();
-        }
-    }, []);
+        
+        getSuppliers();
+
+    }, [didUpdate]);
 
     return(
         <>
@@ -80,14 +102,17 @@ const NewSupplier = (props) => {
                 <form className={style.supplierForm}>
                     <select className={style.formInput} onChange={e => {e.preventDefault(); setRemoveSupplier(e.target.value);}}>
                         <option value="">select</option>
-                        {suppliers.map(supplier => {
+                        {
+                        suppliers.length > 0 ?                        
+                        suppliers.map(supplier => {
 
                             let supplierName = supplier.company_name.split("");
                             let capital = supplierName[0].toUpperCase();
                             supplierName.splice(0, 1, capital);
                             const name = supplierName.join("");
                             return <option value={supplier.company_name} key={supplier.company_id}>{name}</option>
-                        })}
+                        }) : null
+                        }
                     </select>
                 <button className={style.formSubmitBtn} onClick={(e) => removeSupplier(e)}>Remove</button>
                 </form>                

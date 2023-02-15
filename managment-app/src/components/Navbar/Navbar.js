@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import style from './style/Navbar.module.css';
 
-import {UserSession} from '../../App.js';
+import { UserSession } from '../../App.js';
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
@@ -48,7 +48,7 @@ const Navbar = () => {
             <Link className={style.navbarBtn} to="/pipe" >Pipe</Link>
             <Link className={style.navbarBtn} to="/inventura" >Inventura</Link>
             <Link className={style.navbarBtn} to="/newItem" >New Item</Link>
-            <Link className={style.navbarBtn} to="/newSupplier" >New Supplier</Link>
+            <Link className={style.navbarBtn} to="/newSupplier" >Update Suppliers</Link>
             <div className={style.navbarBtn} id="close" onClick={e => handleNavbarClick(e)}>CLOSE</div>
             <button className={style.logoutBtn} onClick={logoutHandler}>Logout</button>
         </ul>

@@ -70,6 +70,7 @@ const Odpis = (props) => {
                 console.log(response.data);                
             } else {
                 console.log(response.data);
+                setWriteOff(writeOff.filter(writof => writof.item_name !== item.item_name));
             }
         })
     }
@@ -103,7 +104,7 @@ const Odpis = (props) => {
             if(response.data.error) {
                 console.log(response.data);                
             } else {
-                setSuppliers(response.data);                
+                setSuppliers(response.data);              
             }
         })
     }
@@ -196,7 +197,7 @@ const Odpis = (props) => {
                             <h3 className={style.itemName}>{item.item_name}</h3>
                             <p className={style.itemQuantity}>{item.quantity + " " + item.units}</p>
                             <p className={style.itemDate}>{item.date}</p>
-                            <button onClick={() => { removeWriteOff(item) }}> X </button>
+                            <button onClick={() => { removeWriteOff(item); }}> X </button>
                         </div>
                     }) :
                     <h3>No items</h3>

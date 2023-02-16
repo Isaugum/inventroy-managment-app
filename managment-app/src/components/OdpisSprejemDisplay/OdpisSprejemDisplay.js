@@ -1,4 +1,5 @@
 import style from './style/OdpisSprejemDisplay.module.css';
+import {useEffect} from 'react';
 
 const OdpisSprejemDisplay = (props) => {
 

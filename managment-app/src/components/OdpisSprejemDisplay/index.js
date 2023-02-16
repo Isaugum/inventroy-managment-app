@@ -1,0 +1,2 @@
+
+export { OdpisSprejemDisplay } from './OdpisSprejemDisplay';

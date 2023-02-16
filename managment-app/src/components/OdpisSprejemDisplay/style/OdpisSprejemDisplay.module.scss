@@ -1,0 +1,33 @@
+@use '../../../styles/index.scss' as main;
+
+.container {
+    width: 100%;
+
+    margin-top: 5rem;
+
+    .listBox {
+        @include main.flexBox(column, flex-start, center);
+
+        .listItem {
+            @include main.flexBox(row, space-evenly, center);
+
+            height: 5rem;
+            width: 23rem;
+
+            margin: 0.5rem 0;
+
+            background-color: rgba(200, 200, 200, 0.7);
+
+            border: solid 4px rgb(170, 170, 170);
+
+            font-size: 1rem;
+
+            .deleteBtn {
+                height: 1.7rem;
+                aspect-ratio: 1/1;
+
+                margin-left: 1rem;
+            }
+        }
+    }
+}

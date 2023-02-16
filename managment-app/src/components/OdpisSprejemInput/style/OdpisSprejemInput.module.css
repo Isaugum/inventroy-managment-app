@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul, li {
+  list-style: none;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container .mainTitle {
+  margin: 8rem 0 5rem 0;
+}
+.container .formBox .supplierForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container .formBox .supplierForm .formInput {
+  width: 15rem;
+  height: 3rem;
+}
+.container .formBox .supplierForm .formSubmitBtn {
+  width: 15rem;
+  height: 3rem;
+  margin-top: 2rem;
+}/*# sourceMappingURL=OdpisSprejemInput.module.css.map */

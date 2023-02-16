@@ -39,6 +39,10 @@ const NewSupplier = (props) => {
     const removeSupplier = async (e) => {
         e.preventDefault();
 
+        let supplierName = removeSupplierChoice;
+        let getID = suppliers.filter(supplier => supplier.company_name === supplierName)
+        let supplierID = getID[0].company_id;
+
         await axios({
             method: "post",
             url: "/remove-supplier",
@@ -46,7 +50,8 @@ const NewSupplier = (props) => {
                 "Content-Type": "application/json",
             },
             data: {
-                supplier: removeSupplierChoice
+                supplier: supplierName,
+                ID: supplierID
             }
         }).then(response => {
             console.log(response);
@@ -55,6 +60,7 @@ const NewSupplier = (props) => {
                 console.log(response.data.error);
             } else {
                 console.log(response.data);
+                setSuppliers(suppliers.filter(supplier => supplier.company_name !== supplierName));
                 setDidUpdate(!didUpdate);
             }
         }).catch(err => {

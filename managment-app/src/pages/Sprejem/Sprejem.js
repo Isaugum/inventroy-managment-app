@@ -1,10 +1,13 @@
 
 import React, { useState, useEffect } from "react";
-import { InputForm, Navbar } from '../../components';
+import { OdpisSprejemInput, OdpisSprejemDisplay, Navbar } from '../../components';
 import axios from 'axios';
+
 import style from './style/Sprejem.module.css';
 
 const Sprejem = (props) => {
+
+    const [ received, setReceived ] = useState([]);
 
     const [ suppliers, setSuppliers  ] = useState([]);
     const [ supplierInput, setSupplierInput ] = useState("");
@@ -21,7 +24,7 @@ const Sprejem = (props) => {
 
         await axios({
             method: "post",
-            url: "/add-received-item",
+            url: "/new-received",
             headers: {
                 "Content-Type": "application/json",
             },
@@ -44,7 +47,52 @@ const Sprejem = (props) => {
             console.log(err);
         })
     }
-   
+
+
+    const removeReceived = async (item) => {
+
+        console.log(item.item_name);
+        console.log(item);
+
+        await axios({
+            method: "post",
+            url: "/remove-received",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            data: {
+                item: item.item_name,
+                quantity: item.quantity,
+                units: item.units,
+                date: item.date,
+            }
+        }).then(response => {
+            if(response.data.error) {
+                console.log(response.data);                
+            } else {
+                console.log(response.data);
+                setReceived(received.filter(received => received.item_name !== item.item_name));
+            }
+        })
+    }
+
+    const getReceived = async () => {
+
+        await axios({
+            method: "get",
+            url: "/get-received",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        }).then(response => {
+            if(response.data.error) {
+                console.log(response.data);                
+            } else {
+                setReceived(response.data);
+            }
+        })
+    }
+
     const getSuppliers = async () => {
 
         await axios({
@@ -57,7 +105,7 @@ const Sprejem = (props) => {
             if(response.data.error) {
                 console.log(response.data);                
             } else {
-                setSuppliers(response.data);                
+                setSuppliers(response.data);              
             }
         })
     }
@@ -92,56 +140,17 @@ const Sprejem = (props) => {
     useEffect(() => {
         
         getSuppliers();
+        getReceived();
 
     }, [didUpdate]);
 
-    return(
+    return (
         <>
         < Navbar />
-        <div className={style.container}>
-            <h1 className={style.mainTitle}>SPREJEM</h1>
-            <div className={style.formBox}>
-                <h2 className={style.formTitle}>Received Items</h2>
-                <form className={style.supplierForm}>
-                    <select className={style.formInput} onChange={e => {e.preventDefault(); setSupplierInput(e.target.value); getItems(e.target.value);}}>
-                        <option value="">select</option>
-                        {
-                        suppliers.length > 0 ?                        
-                        suppliers.map(supplier => {
-
-                            let supplierName = supplier.company_name.split("");
-                            let capital = supplierName[0].toUpperCase();
-                            supplierName.splice(0, 1, capital);
-                            const name = supplierName.join("");
-                            return <option value={supplier.company_name} key={supplier.company_id}>{name}</option>
-                        }) : null
-                        }
-                    </select>
-                    <select className={style.formInput} onChange={e => {e.preventDefault(); setItemChoice(e.target.value);}}>
-                        <option value="">select</option>
-                        {
-                        items.length > 0 ?                        
-                        items.map(item => {
-
-                            let itemName = item.item_name.split("");
-                            let capital = itemName[0].toUpperCase();
-                            itemName.splice(0, 1, capital);
-                            const name = itemName.join("");
-                            return <option value={item.item_name} key={item.item_id}>{name}</option>
-                        }) : null
-                        }
-
-                    </select>
-                    <input className={style.formInput} type="number" placeholder="quantity" onChange={e => {e.preventDefault(); setQuantity(e.target.value);}} />
-                    <select className={style.formInput} onChange={e => {e.preventDefault(); setUnits(e.target.value);}}>
-                        <option value="">select</option>
-                        <option value="KOS">KOS</option>
-                        <option value="LIT">LIT</option>
-                    </select>
-                <button className={style.formSubmitBtn} onClick={(e) => addItem(e)}>Confirm</button>
-                </form>                
-            </div>          
-        </div> 
+        <div className={style.container} >
+            < OdpisSprejemInput mainTitle={"SPREJEM"} setSupplierInput={setSupplierInput} getItems={getItems} suppliers={suppliers} items={items} setItemChoice={setItemChoice} setQuantity={setQuantity} setUnits={setUnits} addItem={addItem} />
+            < OdpisSprejemDisplay list={received} removeListItem={removeReceived} />
+        </div>
         </>
     )
 }

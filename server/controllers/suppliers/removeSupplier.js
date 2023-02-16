@@ -4,8 +4,6 @@ const { database } = require('../../database');
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 
-const jwt = require('jsonwebtoken');
-
 
 router.post("/", jsonParser, (req, res) => {
     if(req.body === undefined || req.body.supplier === "") {
@@ -14,15 +12,40 @@ router.post("/", jsonParser, (req, res) => {
     }
 
     let supplier = req.body.supplier;
+    let supplierID = req.body.ID;
 
-    database.query(`DELETE FROM suppliers WHERE company_name=$1`, [supplier], (err, result) => {
+    console.log(typeof supplierID, "", supplierID, " ", supplier);
+
+    database.query(`DELETE FROM items WHERE supplier_id=$1`, [supplierID], (err, result) => {
         if(err) {
             console.log(err);
             res.send({error: err});
         }
 
-        console.log(`${supplier} deleted!`);
-        res.send({message: `Supplier ${supplier} deleted!`})
+        database.query(`DELETE FROM received_items WHERE supplier_id=$1`, [supplierID], (err, result) => {
+            if(err) {
+                console.log(err);
+                res.send({error: err});
+            }
+        });
+
+        database.query(`DELETE FROM write_off WHERE supplier_id=$1`, [supplierID], (err, result) => {
+            if(err) {
+                console.log(err);
+                res.send({error: err});
+            }
+        });
+
+        console.log(`Items deleted!`);
+        database.query(`DELETE FROM suppliers WHERE company_name=$1`, [supplier], (err, result) => {
+            if(err) {
+                console.log(err);
+                res.send({error: err});
+            }
+    
+            console.log(`${supplier} deleted!`);
+            res.send({message: `Supplier ${supplier} deleted!`})
+        })
     })
 });
 

@@ -31,15 +31,15 @@ const initDatabase = () => {
     database.query(`
     CREATE TABLE IF NOT EXISTS "items" (
         "item_id" SERIAL,
-        "supplier_id" INTEGER NOT NULL REFERENCES suppliers(company_id),
+        "supplier_id" INTEGER NOT NULL REFERENCES suppliers(company_id) ON DELETE CASCADE,
         "item_name" VARCHAR(255) NOT NULL,
         PRIMARY KEY ("item_id")
     );`)
 
     database.query(`
-    CREATE TABLE IF NOT EXISTS "recieved_items" (
+    CREATE TABLE IF NOT EXISTS "received_items" (
         "item_id" SERIAL,
-        "supplier_id" INTEGER NOT NULL REFERENCES suppliers(company_id),
+        "supplier_id" INTEGER NOT NULL REFERENCES suppliers(company_id) ON DELETE CASCADE,
         "item_name" VARCHAR(255) NOT NULL,
         "quantity" DECIMAL(10) NOT NULL,
         "units" VARCHAR(10) NOT NULL,
@@ -50,7 +50,7 @@ const initDatabase = () => {
     database.query(`
     CREATE TABLE IF NOT EXISTS "write_off" (
         "item_id" SERIAL,
-        "supplier_id" INTEGER NOT NULL REFERENCES suppliers(company_id),
+        "supplier_id" INTEGER NOT NULL REFERENCES suppliers(company_id) ON DELETE CASCADE,
         "item_name" VARCHAR(255) NOT NULL,
         "quantity" DECIMAL(10) NOT NULL,
         "units" VARCHAR(10) NOT NULL,

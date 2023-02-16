@@ -1,44 +1,6 @@
 @use '../../../styles/index.scss' as main;
 
 .container {
-    @include main.flexBox(column, flex-start, center);
     @include main.containerDefault;
-
-    .mainTitle {
-        @include main.defaultTitleMargin;
-    }
-
-    .formBox {
-        @include main.flexBox(column, center, center);  
-
-        background-color: main.$basic-primary;
-
-        margin: 10px 0;
-        padding: 40px 70px;
-
-        border-radius: 10px;
-
-        .formTitle {
-            margin-bottom: 10px;
-        }
-
-        .supplierForm {
-            @include main.flexBox(column, center, center);
-
-            .formLabel {
-                font-size: 22px;
-            }
-
-            .formInput {
-                width: 150px;
-                height: 30px;
-                margin: 10px 0;
-            }
-
-            .formSubmitBtn {
-                width: 100px;
-                height: 28px;
-            }
-        }
-    }
+    @include main.flexBox(column, flex-start, center);
 }

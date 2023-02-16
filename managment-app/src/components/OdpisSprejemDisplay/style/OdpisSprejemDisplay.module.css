@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul, li {
+  list-style: none;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  margin-top: 5rem;
+}
+.container .listBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .listBox .listItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 5rem;
+  width: 23rem;
+  margin: 0.5rem 0;
+  background-color: rgba(200, 200, 200, 0.7);
+  border: solid 4px rgb(170, 170, 170);
+  font-size: 1rem;
+}
+.container .listBox .listItem .deleteBtn {
+  height: 1.7rem;
+  aspect-ratio: 1/1;
+  margin-left: 1rem;
+}/*# sourceMappingURL=OdpisSprejemDisplay.module.css.map */

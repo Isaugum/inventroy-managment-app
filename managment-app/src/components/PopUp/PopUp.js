@@ -1,7 +1,7 @@
 import React from 'react'
 import style from './style/PopUp.module.css';
 
-export default function PopUp({ message, setError }) {
+const PopUp = ({ message, setError }) => {
 
     return (
         <div className={style.container}>

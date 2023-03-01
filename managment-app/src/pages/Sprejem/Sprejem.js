@@ -72,6 +72,7 @@ const Sprejem = (props) => {
             } else {
                 console.log(response.data);
                 setReceived(received.filter(received => received.item_name !== item.item_name && received.quantity !== item.quantity && received.date !== item.date));
+                setDidUpdate(!didUpdate);
             }
         })
     }

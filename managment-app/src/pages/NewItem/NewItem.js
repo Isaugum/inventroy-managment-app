@@ -99,10 +99,11 @@ const NewItem = (props) => {
             }
         }).then(response => {
             if(response.data.error) {
-                console.log(response.data);                
+                console.log(response.data);
+                setItems([]);
             } else {
                 console.log(response.data);
-                setItems(response.data);             
+                setItems(response.data);
             }
         }).then(result => {
             setDidUpdate(!didUpdate); 

@@ -1,1 +1,29 @@
 @use '../../../styles/index.scss' as main;
+
+.container {
+    @include main.containerDefault;
+    @include main.flexBox(column, flex-start, center);
+
+    .mainTitle {
+        margin: 8rem 0 5rem 0;
+    }
+
+    .formBox {
+
+        .supplierForm {
+            @include main.flexBox(column, center, center);
+
+            .formInput {
+                width: 15rem;
+                height: 3rem;
+            }
+
+            .formSubmitBtn {
+                width: 15rem;
+                height: 3rem;
+
+                margin-top: 2rem;
+            }
+        }
+    }
+}

@@ -52,7 +52,7 @@ const initDatabase = () => {
         "item_id" SERIAL,
         "supplier_id" INTEGER NOT NULL REFERENCES suppliers(company_id) ON DELETE CASCADE,
         "item_name" VARCHAR(255) NOT NULL,
-        "quantity" DECIMAL(10) NOT NULL,
+        "quantity" NUMERIC(10) NOT NULL,
         "units" VARCHAR(10) NOT NULL,
         "date" VARCHAR(20) NOT NULL,
         PRIMARY KEY ("item_id")

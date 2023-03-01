@@ -101,7 +101,7 @@ const NewSupplier = (props) => {
                 <form className={style.supplierForm}>
                     <input className={style.formInput}type="text" placeholder="company" onChange={e => {e.preventDefault(); setNewSupplierInput(e.target.value);}}/>
                     <button className={style.formSubmitBtn} onClick={(e) => addNewSupplier(e)}>Add</button>
-                </form>                
+                </form>
             </div>
             <div className={style.formBox}>
                 <h2 className={style.formTitle}>Remove supplier</h2>

@@ -2,7 +2,8 @@
 
 //color scheme
 $basic-primary: rgb(8, 201, 250);
-$primary-background: rgba(200, 200, 200, 0.5);
+$primary-background: #17171f;
+$primary-text: #EBE6E6;
 
 
 
@@ -30,6 +31,16 @@ $primary-background: rgba(200, 200, 200, 0.5);
 
     margin: 0;
     padding: 0;
+
+    color: $primary-text;
+}
+
+html, body, div {
+    background-color: $primary-background;
+}
+
+input, select, option, button {
+    color: $primary-background;
 }
 
 ul, li {

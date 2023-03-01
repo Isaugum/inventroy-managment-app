@@ -17,6 +17,10 @@
                 height: 3rem;
             }
 
+            .unitsContainer {
+                @include main.flexBox(row, space-around, center);
+            }
+
             .formSubmitBtn {
                 width: 15rem;
                 height: 3rem;

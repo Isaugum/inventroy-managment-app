@@ -1,2 +1,17 @@
 @use '../../../styles/index.scss' as main;
 
+.container {
+    @include main.flexBox(column, flex-start, center);
+    @include main.containerDefault;
+
+    .importantMsg {
+        @include main.flexBox(column, space-evenly, center);
+
+        width: 28rem;
+        height: 17rem;
+
+        margin-top: 8rem;
+
+        border: solid 1px main.$primary-text;
+    }
+}

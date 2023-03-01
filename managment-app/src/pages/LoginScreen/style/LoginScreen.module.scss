@@ -1,12 +1,5 @@
 @use '../../../styles/index.scss' as main;
 
-//LOCAL VARIABLES
-$inputWidth: 200px;
-$inputHeight: 30px;
-
-$buttonWidth: 150px;
-$buttonHeight: 30px;
-
 .container {
     @include main.flexBox(column, center, center);
     @include main.containerDefault;
@@ -14,32 +7,28 @@ $buttonHeight: 30px;
     .loginForm {
         @include main.flexBox(column, center, center);
 
-        padding: 40px 40px;
-
-        background-color: main.$basic-primary;
-
         .usernameInput {
-            width: $inputWidth;
-            height: $inputHeight;
+            width: 17rem;
+            height: 3rem;
         }
 
         .passwordInput {
-            width: $inputWidth;
-            height: $inputHeight;
+            width: 17rem;
+            height: 3rem;
 
             margin: 5px 0 30px 0;
         }
 
         .loginButton {
-            width: $buttonWidth;
-            height: $buttonHeight;
+            width: 14rem;
+            height: 3rem;
 
             margin-bottom: 10px;
         }
 
         .registerButton {
-            width: $buttonWidth;
-            height: $buttonHeight;
+            width: 14rem;
+            height: 3rem;
         }
     }
 }

@@ -2,6 +2,23 @@ import style from './style/OdpisSprejemInput.module.css';
 
 const OdpisSprejemInput = (props) => {
 
+    let checkboxes = document.getElementsByClassName('checkers');
+
+    function check(e) {
+        const value = e.target.value;
+        const checked = e.target.checked;
+
+        console.log(e.target.id);
+
+        Object.keys(checkboxes).forEach(key => {
+            if(checkboxes[key].id !== e.target.id) {
+                checkboxes[key].checked = false;
+            }
+        })
+
+        props.setUnits(e.target.value);
+    }
+
     return(
         <> 
         <div className={style.container}>
@@ -38,11 +55,13 @@ const OdpisSprejemInput = (props) => {
 
                     </select>
                     <input className={style.formInput} type="number" placeholder="quantity" onChange={e => {e.preventDefault(); props.setQuantity(e.target.value);}} />
-                    <select className={style.formInput} onChange={e => {e.preventDefault(); props.setUnits(e.target.value);}}>
-                        <option value="">Select units</option>
-                        <option value="KOS">KOS</option>
-                        <option value="LIT">LIT</option>
-                    </select>
+                    <div className={style.unitsContainer}>
+                        <input className="checkers" type="checkbox" id="kos" name="kos" value="KOS" onClick={(e) => check(e)}/>
+                        <label htmlFor="kos">KOS</label>
+                        <input className="checkers" type="checkbox" id="lit" name="lit" value="LIT" onClick={(e) => check(e)}/>
+                        <label htmlFor="lit">LIT</label>                        
+                    </div>
+
                 <button className={style.formSubmitBtn} onClick={(e) => props.addItem(e)}>Confirm</button>
                 </form>                
             </div>

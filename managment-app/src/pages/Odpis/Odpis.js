@@ -72,6 +72,7 @@ const Odpis = (props) => {
             } else {
                 console.log(response.data);
                 setWriteOff(writeOff.filter(writof => writof.item_name !== item.item_name && writof.units !== item.units && writof.date !== item.date));
+                setDidUpdate(!didUpdate);
             }
         })
     }

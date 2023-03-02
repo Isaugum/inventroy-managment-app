@@ -23,6 +23,10 @@ const removeWriteOffRouter = require('./controllers/writeOff/removeWriteOff.js')
 const newReceivedRouter = require('./controllers/receiveItems/addReceivedItem');
 const getReceivedRouter = require('./controllers/receiveItems/getRecivedItems');
 const removeReceivedRouter = require('./controllers/receiveItems/removeReceivedItem');
+//MESSAGES
+const newMessageRouter = require('./controllers/messages/addNewMessage');
+const getMessageRouter = require('./controllers/messages/getMessages');
+const removeMessageRouter = require('./controllers/messages/removeMessage');
 
 const app = express();
 const port = process.env.PORT;
@@ -53,6 +57,9 @@ app.use("/new-received", newReceivedRouter);
 app.use("/get-received", getReceivedRouter);
 app.use("/remove-received", removeReceivedRouter);
 
+app.use("/new-message", newMessageRouter);
+app.use("/get-messages", getMessageRouter);
+app.use("/remove-message", removeMessageRouter);
 
 app.listen(port, () => {
     initDatabase();

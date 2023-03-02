@@ -30,6 +30,7 @@ const Sprejem = (props) => {
             },
             data: {
                 item: itemChoice.toLowerCase(),
+                post_id: Math.floor(Math.random() * 100),
                 supplier: supplierInput.toLowerCase(),
                 quantity: quantity.toLowerCase(),
                 units: units.toLowerCase()
@@ -62,6 +63,7 @@ const Sprejem = (props) => {
             },
             data: {
                 item: item.item_name,
+                post_id: item.receive_id,
                 quantity: item.quantity,
                 units: item.units,
                 date: item.date,

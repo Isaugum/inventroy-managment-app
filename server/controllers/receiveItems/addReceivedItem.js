@@ -7,6 +7,7 @@ const jsonParser = bodyParser.json();
 router.post("/", jsonParser, (req, res) => {
 
     let itemName = req.body.item;
+    let postID = req.body.post_id;
     let supplier = req.body.supplier;
     let quantity = req.body.quantity;
     let units = req.body.units;
@@ -26,7 +27,7 @@ router.post("/", jsonParser, (req, res) => {
         if(result.rows.length > 0) {
             let supplierId = result.rows[0].company_id;
             
-            database.query(`INSERT INTO received_items (supplier_id, item_name, quantity, units, date) VALUES ($1, $2, $3, $4, $5);`, [supplierId, itemName, quantity, units, date], (err, result) => {
+            database.query(`INSERT INTO received_items (supplier_id, item_name, receive_id, quantity, units, date) VALUES ($1, $2, $3, $4, $5, $6);`, [supplierId, itemName, postID, quantity, units, date], (err, result) => {
                 if(err) {
                     console.log(err);
                     res.send({error: err});

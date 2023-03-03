@@ -12,7 +12,6 @@ const DisplayMessages = ({ messages, deletePost }) => {
                     <h3 className={style.msgTitle}>{msg.post_title}</h3>  
                     <button className={style.deleteBtn} onClick={e => deletePost(msg)}> X </button>                  
                 </div>
-
                 <p className={style.msgBody}>{msg.post_content}</p>
                 </div>
                 })

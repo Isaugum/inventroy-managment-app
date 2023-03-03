@@ -22,17 +22,31 @@ a {
   text-decoration: none;
 }
 
-.openBtn {
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   top: 0;
   right: 0;
-  height: 40px;
+  width: 100%;
+  height: 50px;
+}
+.container .openBtn {
   color: rgb(230, 230, 230);
   background-color: rgba(141, 25, 122, 0.6);
   padding: 10px 20px;
 }
-
-.navbarContainer {
+.container .navbarBtn {
+  height: 40px;
+  color: rgb(230, 230, 230);
+  background-color: rgba(141, 25, 122, 0.6);
+  margin: 5px 0;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+.container .navbarContainer {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -47,7 +61,7 @@ a {
   padding-top: 60px;
   transition: 500ms;
 }
-.navbarContainer .navbarBtn {
+.container .navbarContainer .navbarBtn {
   height: 40px;
   width: 80%;
   color: rgb(230, 230, 230);
@@ -56,7 +70,7 @@ a {
   padding-left: 10px;
   padding-top: 10px;
 }
-.navbarContainer .logoutBtn {
+.container .navbarContainer .logoutBtn {
   margin-top: 20px;
   width: 40%;
   height: 40px;

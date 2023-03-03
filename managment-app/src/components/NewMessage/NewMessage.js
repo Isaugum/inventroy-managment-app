@@ -1,11 +1,15 @@
 import axios from 'axios';
 import {useState} from 'react';
 
-const NewMessage = () => {
+import style from './style/NewMessage.module.css';
+
+const NewMessage = ({ didUpdate, setDidUpdate }) => {
 
     const [ messageContent, setMessageContent] = useState("");
     const [ messageTitle, setMessageTitle] = useState("");
-    const [ didUpdate, setDidUpdate ] = useState(false);
+
+    const titleInput = document.getElementById("titleInput");
+    const bodyInput = document.getElementById("bodyInput");
 
     const addMessage = async (e) => {
         e.preventDefault();
@@ -22,8 +26,6 @@ const NewMessage = () => {
                 postContent: messageContent
             }
         }).then(response => {
-            console.log(response);
-
             if(response.data.error) {
                 console.log(response.data.error);
             } else {
@@ -33,14 +35,17 @@ const NewMessage = () => {
         }).catch(err => {
             console.log(err);
         })
+
+        titleInput.value = "";
+        bodyInput.value = "";
     }
 
     return(
         <>
-        <div>
-            <input type="text" placeholder="title" onChange={e => setMessageTitle(e.target.value)} />
-            <input type="text" onChange={e => setMessageContent(e.target.value)} />
-            <button onClick={(e) => addMessage(e)}>Submit</button>
+        <div className={style.container}>
+            <input id="titleInput" className={style.titleInput} type="text" placeholder="title" onChange={e => setMessageTitle(e.target.value)} />
+            <textarea id="bodyInput" className={style.bodyInput} type="text" rows="10" cols="50" placeholder="body..." onChange={e => setMessageContent(e.target.value)} />
+            <button className={style.submitBtn} onClick={(e) => addMessage(e)}>Submit</button>
         </div>
         </>
     )

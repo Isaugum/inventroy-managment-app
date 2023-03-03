@@ -1,0 +1,49 @@
+@use '../../../styles/index.scss' as main;
+
+.container {
+    @include main.flexBox(column, center, center);
+
+    width: 100%;
+    margin-top: 5rem;
+    
+    .msgContainer {
+        height: 100%;
+        width: 18rem;
+
+        padding: 1.5rem;
+
+        border: solid white;
+        border-radius: 5px;
+
+        position: relative;
+
+        .postHead {
+            @include main.flexBox(row, space-between, center);
+
+            .msgTitle {
+    
+                font-size: 1.5rem;;
+            }
+
+            .deleteBtn {
+                aspect-ratio: 1/1;
+                height: 1.5rem;
+            }
+        }
+
+        .msgBody {
+
+            font-size: 1.2rem;
+
+            &:before {
+                content: "";
+                height: 1px;
+                width: 100%;
+                background-color: white;
+                display: block;
+                margin-top: 0.7rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+    }
+}

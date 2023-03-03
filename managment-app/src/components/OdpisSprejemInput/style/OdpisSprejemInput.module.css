@@ -41,6 +41,12 @@ a {
   width: 15rem;
   height: 3rem;
 }
+.container .formBox .supplierForm .unitsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
 .container .formBox .supplierForm .formSubmitBtn {
   width: 15rem;
   height: 3rem;

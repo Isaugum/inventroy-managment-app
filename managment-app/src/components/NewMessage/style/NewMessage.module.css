@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #EBE6E6;
+}
+
+html, body, div {
+  background-color: #17171f;
+}
+
+input, select, option, button, textarea {
+  color: #17171f;
+}
+
+ul, li {
+  list-style: none;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.container .titleInput {
+  width: 15rem;
+  height: 2rem;
+}
+.container .bodyInput {
+  width: 18rem;
+  height: 10rem;
+  line-height: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 0.8rem;
+}
+.container .submitBtn {
+  width: 5rem;
+  height: 2rem;
+}/*# sourceMappingURL=NewMessage.module.css.map */

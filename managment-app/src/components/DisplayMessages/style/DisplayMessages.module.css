@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #EBE6E6;
+}
+
+html, body, div {
+  background-color: #17171f;
+}
+
+input, select, option, button, textarea {
+  color: #17171f;
+}
+
+ul, li {
+  list-style: none;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 5rem;
+}
+.container .msgContainer {
+  height: 100%;
+  width: 18rem;
+  padding: 1.5rem;
+  border: solid white;
+  border-radius: 5px;
+  position: relative;
+}
+.container .msgContainer .postHead {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .msgContainer .postHead .msgTitle {
+  font-size: 1.5rem;
+}
+.container .msgContainer .postHead .deleteBtn {
+  aspect-ratio: 1/1;
+  height: 1.5rem;
+}
+.container .msgContainer .msgBody {
+  font-size: 1.2rem;
+}
+.container .msgContainer .msgBody:before {
+  content: "";
+  height: 1px;
+  width: 100%;
+  background-color: white;
+  display: block;
+  margin-top: 0.7rem;
+  margin-bottom: 1.5rem;
+}/*# sourceMappingURL=DisplayMessages.module.css.map */

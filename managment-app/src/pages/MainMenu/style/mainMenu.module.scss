@@ -4,14 +4,19 @@
     @include main.flexBox(column, flex-start, center);
     @include main.containerDefault;
 
-    .importantMsg {
-        @include main.flexBox(column, space-evenly, center);
+    .mainMenuBtns {
+        @include main.gridBox(1fr 1fr, auto, center, center);
+        margin-top: 5rem;
 
-        width: 28rem;
-        height: 17rem;
+        .menuNavBtn {
+            @include main.flexBox(column, center, center);
 
-        margin-top: 8rem;
+            aspect-ratio: 1/1;
+            height: 9rem;
 
-        border: solid 1px main.$primary-text;
+            margin: 1rem 1rem;
+
+            border: solid white;
+        }
     }
 }

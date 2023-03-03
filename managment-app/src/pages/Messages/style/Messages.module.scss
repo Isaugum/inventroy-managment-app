@@ -1,0 +1,6 @@
+@use '../../../styles/index.scss' as main;
+
+.container {
+    @include main.containerDefault;
+    @include main.flexBox(column, space-evenly, center);
+}

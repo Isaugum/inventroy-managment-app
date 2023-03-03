@@ -1,0 +1,24 @@
+@use '../../../styles/index.scss' as main;
+
+.container {
+    @include main.flexBox(column, center, flex-start);
+
+    .titleInput {
+        width: 15rem;
+        height: 2rem;
+    }
+
+    .bodyInput {
+        width: 18rem;
+        height: 10rem;
+        line-height: 1rem;
+
+        margin-top: 1rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .submitBtn {
+        width: 5rem;
+        height: 2rem;
+    }
+}

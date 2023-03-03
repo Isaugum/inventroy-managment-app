@@ -1,37 +1,25 @@
 @use '../../../styles/index.scss' as main;
 
-.openBtn {
+
+.container {
+    @include main.flexBox(row, center, center);
+
     position: absolute;
     top: 0;
     right: 0;
 
-    height: 40px;
+    width: 100%;
+    height: 50px;
 
-    color: rgb(230, 230, 230);
-    background-color: rgba(141, 25, 122, 0.6);
-
-    padding: 10px 20px;
-}
-
-.navbarContainer {
-    @include main.flexBox(column, flex-start, flex-start);
-
-    position: fixed;
-    top: 0;
-    right: 0;
-
-    width: 50%;
-    height: 100vh;
-    background-color: main.$basic-primary;
-
-    padding-left: 15px;
-    padding-top: 60px;
-
-    transition: 500ms;
+    .openBtn {  
+        color: rgb(230, 230, 230);
+        background-color: rgba(141, 25, 122, 0.6);
+    
+        padding: 10px 20px;
+    }
 
     .navbarBtn {
         height: 40px;
-        width: 80%;
 
         color: rgb(230, 230, 230);
         background-color: rgba(141, 25, 122, 0.6);
@@ -40,11 +28,41 @@
         padding-left: 10px;
         padding-top: 10px;
     }
-
-    .logoutBtn {
-        margin-top: 20px;
-
-        width: 40%;
-        height: 40px;
+    
+    .navbarContainer {
+        @include main.flexBox(column, flex-start, flex-start);
+    
+        position: fixed;
+        top: 0;
+        right: 0;
+    
+        width: 50%;
+        height: 100vh;
+        background-color: main.$basic-primary;
+    
+        padding-left: 15px;
+        padding-top: 60px;
+    
+        transition: 500ms;
+    
+        .navbarBtn {
+            height: 40px;
+            width: 80%;
+    
+            color: rgb(230, 230, 230);
+            background-color: rgba(141, 25, 122, 0.6);
+            
+            margin: 5px 0;
+            padding-left: 10px;
+            padding-top: 10px;
+        }
+    
+        .logoutBtn {
+            margin-top: 20px;
+    
+            width: 40%;
+            height: 40px;
+        }
     }
+
 }

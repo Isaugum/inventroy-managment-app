@@ -15,6 +15,14 @@ $primary-text: #EBE6E6;
     align-items: $align;    
 }
 
+@mixin gridBox($columns, $rows, $justify, $align) {
+    display: grid;
+    grid-template-columns: $columns;
+    grid-template-rows: $rows;
+    justify-items: $justify;
+    align-items: $align;
+}
+
 @mixin containerDefault {
     height: 100vh;
     width: 100%;
@@ -39,7 +47,7 @@ html, body, div {
     background-color: $primary-background;
 }
 
-input, select, option, button {
+input, select, option, button, textarea {
     color: $primary-background;
 }
 

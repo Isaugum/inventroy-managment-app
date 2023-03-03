@@ -40,18 +40,21 @@ const Navbar = () => {
 
     return(
         <>
-        <div className={style.openBtn} id="open" style={{ display: navbarPosition.openButton }} onClick={e => handleNavbarClick(e)}>MENU</div>
-        <ul className={style.navbarContainer} style={{right: navbarPosition.right}}>
+        <div className={style.container}>
             <Link className={style.navbarBtn} to="/" >Main Menu</Link>
-            <Link className={style.navbarBtn} to="/sprejem" >Sprejem</Link>
-            <Link className={style.navbarBtn} to="/odpis" >Odpis</Link>
-            <Link className={style.navbarBtn} to="/pipe" >Pipe</Link>
-            <Link className={style.navbarBtn} to="/inventura" >Inventura</Link>
-            <Link className={style.navbarBtn} to="/newItem" >Update Items</Link>
-            <Link className={style.navbarBtn} to="/newSupplier" >Update Suppliers</Link>
-            <div className={style.navbarBtn} id="close" onClick={e => handleNavbarClick(e)}>CLOSE</div>
-            <button className={style.logoutBtn} onClick={logoutHandler}>Logout</button>
-        </ul>
+            <div className={style.openBtn} id="open" style={{ display: navbarPosition.openButton }} onClick={e => handleNavbarClick(e)}>MENU</div>
+            <ul className={style.navbarContainer} style={{right: navbarPosition.right}}>
+                <Link className={style.navbarBtn} to="/" >Main Menu</Link>
+                <Link className={style.navbarBtn} to="/sprejem" >Sprejem</Link>
+                <Link className={style.navbarBtn} to="/odpis" >Odpis</Link>
+                <Link className={style.navbarBtn} to="/pipe" >Pipe</Link>
+                <Link className={style.navbarBtn} to="/inventura" >Inventura</Link>
+                <Link className={style.navbarBtn} to="/newItem" >Update Items</Link>
+                <Link className={style.navbarBtn} to="/newSupplier" >Update Suppliers</Link>
+                <div className={style.navbarBtn} id="close" onClick={e => handleNavbarClick(e)}>CLOSE</div>
+                <button className={style.logoutBtn} onClick={logoutHandler}>Logout</button>
+            </ul>
+        </div>
         </>
     )
 }

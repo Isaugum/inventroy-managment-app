@@ -6,4 +6,4 @@ export { FourOFour } from "./FourOFour";
 export { NewSupplier } from './NewSupplier';
 export { NewItem } from './NewItem';
 export { LoginScreen } from './LoginScreen';
-export { NewMessage } from './NewMessage';
+export { Messages } from './Messages';

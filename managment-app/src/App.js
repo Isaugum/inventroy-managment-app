@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState, useEffect, createContext } from "react";
-import { MainMenu, Sprejem, Odpis, Inventura, FourOFour, NewItem, NewSupplier, LoginScreen } from './pages';
+import { MainMenu, Sprejem, Odpis, Inventura, FourOFour, NewItem, NewSupplier, LoginScreen, Messages } from './pages';
 import { Routes, Route, useNavigate } from "react-router-dom";
 
 export const DataContext = createContext(null);
@@ -28,6 +28,7 @@ function App() {
     <UserSession.Provider value={{userSession, setUserSession, user, setUser}}>
       <Routes>
         <Route path="/" element={userSession ? < MainMenu /> : < LoginScreen/>} />
+        <Route path="/obvestila" element={< Messages />}/>
         <Route path="/sprejem" element={< Sprejem />}/>
         <Route path="/odpis" element={< Odpis />}/>
         <Route path="/inventura" element={< Inventura />}/>
